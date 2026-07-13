@@ -294,6 +294,10 @@ a:focus-visible {
   transition: transform 130ms ease, box-shadow 130ms ease, background-color 130ms ease;
 }
 
+.download-frame {
+  display: none;
+}
+
 .download-button:hover {
   background: #8fbe50;
   transform: translateY(-3px);

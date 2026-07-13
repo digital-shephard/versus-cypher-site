@@ -64,6 +64,22 @@ const terminalSeed = [
   ["NODE", "TELEMETRY", "NONE"],
 ];
 
+const DOWNLOAD_FRAME_NAME = "versus-release-download";
+
+function DownloadButton({ release }) {
+  return (
+    <a
+      className="download-button"
+      href={release.url}
+      target={DOWNLOAD_FRAME_NAME}
+      download
+    >
+      <ArrowDownToLine aria-hidden="true" />
+      Download for {release.label}
+    </a>
+  );
+}
+
 function App() {
   const [platform, setPlatform] = useState("windows");
   const [ritual, setRitual] = useState("rain");
@@ -106,6 +122,13 @@ function App() {
 
   return (
     <main>
+      <iframe
+        className="download-frame"
+        name={DOWNLOAD_FRAME_NAME}
+        title="Release download"
+        aria-hidden="true"
+        tabIndex="-1"
+      />
       <header className="site-nav">
         <a className="nav-brand" href="#top" aria-label="Versus Cypher home">
           <img src="/assets/brand/logo_full.png" alt="Versus" />
@@ -144,10 +167,7 @@ function App() {
           </div>
 
           <div className="hero-actions">
-            <a className="download-button" href={selectedRelease.url} target="_blank" rel="noreferrer">
-              <ArrowDownToLine aria-hidden="true" />
-              Download for {selectedRelease.label}
-            </a>
+            <DownloadButton release={selectedRelease} />
             <a className="source-link" href={SOURCE_URL} target="_blank" rel="noreferrer">
               <Github aria-hidden="true" /> Build from source
             </a>
@@ -408,9 +428,7 @@ function FinalSection({ platform, setPlatform }) {
           </button>
         ))}
       </div>
-      <a className="download-button" href={selectedRelease.url} target="_blank" rel="noreferrer">
-        <ArrowDownToLine aria-hidden="true" /> Download for {selectedRelease.label}
-      </a>
+      <DownloadButton release={selectedRelease} />
       <footer>
         <img src="/assets/brand/logo_full.png" alt="Versus" />
         <span>Open source / Base / Waku</span>
