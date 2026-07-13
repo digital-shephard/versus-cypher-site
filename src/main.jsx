@@ -13,18 +13,18 @@ import {
 import "@fontsource/jersey-25";
 import "./styles.css";
 
-const RELEASE_PAGE_URL = "https://github.com/digital-shephard/versus-cypher/releases/tag/v0.1.0";
+const RELEASE_PAGE_URL = "https://github.com/digital-shephard/versus-cypher/releases/tag/v0.1.1";
 const SOURCE_URL = "https://github.com/digital-shephard/versus-cypher";
 
 const platformReleases = {
   windows: {
     label: "Windows",
-    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.0/Versus-Cypher-Setup-0.1.0-win-x64.exe",
+    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.1/Versus-Cypher-Setup-0.1.1-win-x64.exe",
     trust: "Signed Windows installer / Authenticode verified",
   },
   linux: {
     label: "Linux",
-    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.0/Versus-Cypher-0.1.0-linux-x86_64.AppImage",
+    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.1/Versus-Cypher-0.1.1-linux-x86_64.AppImage",
     trust: "Linux AppImage / SHA-256 checksum published",
   },
   macos: {
