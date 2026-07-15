@@ -13,24 +13,24 @@ import {
 import "@fontsource/jersey-25";
 import "./styles.css";
 
-const RELEASE_PAGE_URL = "https://github.com/digital-shephard/versus-cypher/releases/tag/v0.1.4";
+const RELEASE_PAGE_URL = "https://github.com/digital-shephard/versus-cypher/releases/tag/v0.1.5";
 const SOURCE_URL = "https://github.com/digital-shephard/versus-cypher";
 
 const platformReleases = {
   windows: {
     label: "Windows",
-    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.4/Versus-Cypher-Setup-0.1.4-win-x64.exe",
+    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.5/Versus-Cypher-Setup-0.1.5-win-x64.exe",
     trust: "Signed Windows installer / Authenticode verified",
   },
   linux: {
     label: "Linux",
-    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.4/Versus-Cypher-0.1.4-linux-x86_64.AppImage",
+    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.5/Versus-Cypher-0.1.5-linux-x86_64.AppImage",
     trust: "Linux AppImage / SHA-256 checksum published",
   },
   macos: {
     label: "macOS",
-    url: RELEASE_PAGE_URL,
-    trust: "macOS release coming soon / Developer ID signing pending",
+    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.5/Versus-Cypher-0.1.5-mac-universal.dmg",
+    trust: "Signed and notarized macOS universal app",
   },
 };
 
@@ -158,7 +158,7 @@ function App() {
             <button className={platform === "windows" ? "active" : ""} onClick={() => setPlatform("windows")} title="Windows">
               <MonitorDown aria-hidden="true" /> <span>Windows</span>
             </button>
-            <button className="coming-soon" disabled data-soon="Soon" title="macOS coming soon" aria-label="macOS coming soon">
+            <button className={platform === "macos" ? "active" : ""} onClick={() => setPlatform("macos")} title="macOS">
               <Apple aria-hidden="true" /> <span>macOS</span>
             </button>
             <button className={platform === "linux" ? "active" : ""} onClick={() => setPlatform("linux")} title="Linux">
@@ -415,7 +415,7 @@ function FinalSection({ platform, setPlatform }) {
       <div className="final-platforms" role="group" aria-label="Choose download platform">
         {[
           ["windows", "Windows", false],
-          ["macos", "macOS - Soon", true],
+          ["macos", "macOS", false],
           ["linux", "Linux", false],
         ].map(([value, label, disabled]) => (
           <button
