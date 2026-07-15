@@ -18,17 +18,17 @@ const SOURCE_URL = "https://github.com/digital-shephard/versus-cypher";
 const platformReleases = {
   windows: {
     label: "Windows",
-    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.6/Versus-Cypher-Setup-0.1.6-win-x64.exe",
+    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.7/Versus-Cypher-Setup-0.1.7-win-x64.exe",
     trust: "Signed Windows installer / Authenticode verified",
   },
   linux: {
     label: "Linux",
-    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.6/Versus-Cypher-0.1.6-linux-x86_64.AppImage",
+    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.7/Versus-Cypher-0.1.7-linux-x86_64.AppImage",
     trust: "Linux AppImage / SHA-256 checksum published",
   },
   macos: {
     label: "macOS",
-    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.6/Versus-Cypher-0.1.6-mac-universal.dmg",
+    url: "https://github.com/digital-shephard/versus-cypher/releases/download/v0.1.7/Versus-Cypher-0.1.7-mac-universal.dmg",
     trust: "Signed and notarized macOS universal app",
   },
 };
