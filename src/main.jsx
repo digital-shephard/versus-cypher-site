@@ -13,7 +13,6 @@ import {
 import "@fontsource/jersey-25";
 import "./styles.css";
 
-const RELEASE_PAGE_URL = "https://github.com/digital-shephard/versus-cypher/releases/tag/v0.1.5";
 const SOURCE_URL = "https://github.com/digital-shephard/versus-cypher";
 
 const platformReleases = {
