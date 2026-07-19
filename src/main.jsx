@@ -217,7 +217,7 @@ function SiteNav({ active = "home" }) {
         tabIndex="-1"
       />
       <a className="nav-brand" href="/" aria-label="Versus Cypher home">
-        <img src="/assets/brand/logo_full.png" alt="Versus" />
+        <img src="/assets/brand/logo_full-512.webp" alt="Versus" width="512" height="465" decoding="async" />
       </a>
       <nav aria-label="Main navigation">
         <a href="/how-it-works/" aria-current={active === "how" ? "page" : undefined}>How it works</a>
@@ -429,7 +429,15 @@ function AutoLaunchSection() {
       </div>
 
       <div className="launch-machine" aria-label="Automatic launch sequence">
-        <img className="launch-machine-shell" src="/assets/site/hero-rail-trimmed.png" alt="" />
+        <img
+          className="launch-machine-shell"
+          src="/assets/site/hero-rail-trimmed-1200.webp"
+          srcSet="/assets/site/hero-rail-trimmed-1200.webp 1200w, /assets/site/hero-rail-trimmed-2115.webp 2115w"
+          sizes="100vw"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
         <div className="launch-machine-stages">
           <div className="launch-stage launch-stage-rain">
             <span>01</span><b>Rain</b><small>One penny / Cypher</small>
@@ -472,7 +480,14 @@ function OwnerlessSection() {
       </div>
 
       <div className="authority-machine" aria-label="Versus contract authority specification">
-        <img src="/assets/site/hero-chassis.png" alt="Open Versus contract chassis" />
+        <img
+          src="/assets/site/hero-chassis-768.webp"
+          srcSet="/assets/site/hero-chassis-768.webp 768w, /assets/site/hero-chassis-1024.webp 1024w"
+          sizes="(max-width: 760px) 94vw, 50vw"
+          alt="Open Versus contract chassis"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="authority-screen">
           <header><span>Control authority</span><b>Base 8453</b></header>
           <strong>NONE</strong>
@@ -508,8 +523,8 @@ function EconomicLoopSection() {
       </div>
 
       <div className="loop-diagram">
-        <div className="loop-orbit loop-orbit-a" aria-hidden="true"><img src="/assets/site/rain-coin.png" alt="" /></div>
-        <div className="loop-orbit loop-orbit-b" aria-hidden="true"><img src="/assets/site/rain-coin.png" alt="" /></div>
+        <div className="loop-orbit loop-orbit-a" aria-hidden="true"><img src="/assets/site/rain-coin-96.webp" alt="" loading="lazy" decoding="async" /></div>
+        <div className="loop-orbit loop-orbit-b" aria-hidden="true"><img src="/assets/site/rain-coin-96.webp" alt="" loading="lazy" decoding="async" /></div>
         <div className="loop-core">
           <img src="/assets/brand/v_gem.png" alt="" />
           <span>Repeat</span>
@@ -613,7 +628,16 @@ function Device({ open, removedScrews, onToggleScrew, onToggleService, terminalL
 
   return (
     <div className={`device-rig ${open ? "is-open" : ""}`}>
-      <img className="device-chassis" src="/assets/site/hero-chassis.png" alt="Open Versus Cypher chassis" />
+      {(open || removedScrews.length > 0) && (
+        <img
+          className="device-chassis"
+          src="/assets/site/hero-chassis-768.webp"
+          srcSet="/assets/site/hero-chassis-768.webp 768w, /assets/site/hero-chassis-1024.webp 1024w"
+          sizes="(max-width: 760px) 92vw, 48vw"
+          alt="Open Versus Cypher chassis"
+          decoding="async"
+        />
+      )}
       <div className="device-terminal" aria-hidden={!open}>
         <div className="terminal-header"><b>VERSUS BUS</b><span>LOCAL</span></div>
         <div className="terminal-status"><span>CHAIN <b>BASE</b></span><span>WAKU <b>ON</b></span><span>BRAIN <b>SAFE</b></span></div>
@@ -626,17 +650,24 @@ function Device({ open, removedScrews, onToggleScrew, onToggleService, terminalL
       </div>
 
       <div className="device-faceplate">
-        <img className="device-shell" src="/assets/site/hero-faceplate.png" alt="Versus Cypher desktop device" />
+        <img
+          className="device-shell"
+          src="/assets/site/hero-faceplate-768.webp"
+          srcSet="/assets/site/hero-faceplate-768.webp 768w, /assets/site/hero-faceplate-1024.webp 1024w"
+          sizes="(max-width: 760px) 92vw, 48vw"
+          alt="Versus Cypher desktop device"
+          fetchPriority="high"
+        />
         <button type="button" className="service-tab" onClick={onToggleService} title="Open service view" aria-label="Open service view">
           <span aria-hidden="true" />
         </button>
-        <img className="device-logo" src="/assets/brand/logo_full.png" alt="Versus" />
+        <img className="device-logo" src="/assets/brand/logo_full-512.webp" alt="Versus" width="512" height="465" decoding="async" />
         <div className="device-screen">
           <div className="screen-readout"><span>$431.22 / $1K</span><span>43% · 1.3K</span></div>
           <RainField count={18} />
           <div className="screen-raft">
-            <img className="screen-cypher" src="/assets/cyphers/Ohwail.gif" alt="Ohwail Cypher" />
-            <img className="screen-plank" src="/assets/site/hero-raft.png" alt="" />
+            <img className="screen-cypher" src="/assets/cyphers/Ohwail.webp" alt="Ohwail Cypher" width="360" height="300" decoding="async" />
+            <img className="screen-plank" src="/assets/site/hero-raft-768.webp" alt="" width="768" height="425" decoding="async" />
             <b>+1.3K</b>
           </div>
         </div>
@@ -663,7 +694,7 @@ function Device({ open, removedScrews, onToggleScrew, onToggleService, terminalL
             onClick={() => onToggleScrew(screw.id)}
             aria-label={removed ? "Return screw" : "Remove screw"}
           >
-            <img src={removed ? "/assets/site/screw-loose.png" : "/assets/site/screw-seated.png"} alt="" />
+            <img src={removed ? "/assets/site/screw-loose-128.webp" : "/assets/site/screw-seated-128.webp"} alt="" width="128" height="128" decoding="async" />
           </button>
         );
       })}
@@ -698,7 +729,7 @@ function CoinRain({ count, className = "" }) {
     {coins.map((coin, index) => (
       <img
         key={index}
-        src="/assets/site/rain-coin.png"
+        src="/assets/site/rain-coin-96.webp"
         alt=""
         style={{
           left: coin.left,
@@ -718,7 +749,14 @@ function LiveRail() {
 
   return (
     <div className="live-rail" id="live">
-      <img src="/assets/site/hero-rail-trimmed.png" alt="Versus network status console" />
+      <img
+        src="/assets/site/hero-rail-trimmed-1200.webp"
+        srcSet="/assets/site/hero-rail-trimmed-1200.webp 1200w, /assets/site/hero-rail-trimmed-2115.webp 2115w"
+        sizes="100vw"
+        alt="Versus network status console"
+        loading="lazy"
+        decoding="async"
+      />
       <div className="rail-actions">
         <div><span>01</span><b>Hatch</b></div>
         <div><span>02</span><b>Rain</b></div>
@@ -757,18 +795,26 @@ function RitualSection({ ritual, setRitual }) {
           <div className="ritual-scene" aria-hidden="true">
             {ritual === "hatch" && <>
               <div className="egg-glow" />
-              <img className="hatch-egg" src="/assets/site/hatch-egg.png" alt="" />
+              <img className="hatch-egg" src="/assets/site/hatch-egg-512.webp" alt="" width="512" height="512" loading="lazy" decoding="async" />
             </>}
             {ritual === "rain" && <>
               <RainField count={44} heavy />
               <CoinRain count={16} className="ritual-coin-rain" />
-              <img className="ritual-cypher" src="/assets/cyphers/Ohwail.gif" alt="" />
-              <img className="ritual-raft" src="/assets/site/hero-raft.png" alt="" />
+              <img className="ritual-cypher" src="/assets/cyphers/Ohwail.webp" alt="" width="360" height="300" loading="lazy" decoding="async" />
+              <img className="ritual-raft" src="/assets/site/hero-raft-768.webp" alt="" width="768" height="425" loading="lazy" decoding="async" />
             </>}
             {ritual === "graduate" && <>
               <div className="ritual-vessel" aria-hidden="true">
-                <img className="ritual-ship" src="/assets/site/graduation-ship.png" alt="" />
-                <img className="ritual-hoist" src="/assets/site/graduation-hoist.png" alt="" />
+                <img
+                  className="ritual-ship"
+                  src="/assets/site/graduation-ship-768.webp"
+                  srcSet="/assets/site/graduation-ship-768.webp 768w, /assets/site/graduation-ship-1200.webp 1200w"
+                  sizes="(max-width: 760px) 150vw, 70vw"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img className="ritual-hoist" src="/assets/site/graduation-hoist-512.webp" alt="" width="512" height="768" loading="lazy" decoding="async" />
               </div>
             </>}
           </div>
@@ -799,7 +845,13 @@ function ProtocolHero({ terminalLines }) {
       </div>
       <div className="protocol-art">
         <div className="protocol-device">
-          <img src="/assets/site/hero-chassis.png" alt="Versus Cypher open hardware chassis" />
+          <img
+            src="/assets/site/hero-chassis-768.webp"
+            srcSet="/assets/site/hero-chassis-768.webp 768w, /assets/site/hero-chassis-1024.webp 1024w"
+            sizes="(max-width: 760px) 92vw, 48vw"
+            alt="Versus Cypher open hardware chassis"
+            decoding="async"
+          />
           <div className="protocol-terminal">
             <header><b>VERSUS BUS</b><span>NO CENTRAL INBOX</span></header>
             {terminalLines.slice(-4).map((line, index) => (
